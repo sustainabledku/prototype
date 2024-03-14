@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/new_susDKUlogo.png" type="image/x-icon">
+	<title>Home</title>	
+    <link rel="stylesheet" href="index.css">
+    <script src="all.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <!--Menu-->
+	<header>
+		<div class="top">
+			<div class="container">
+				<ul class="lang">
+					<a href="#"><img src="images/icons/language.png" height="35px" onclick="switch_lng()"></a>
+				</ul>
+			</div>
+		</div>
+
+		<nav>
+			<div class="container">
+				<a href="#" class="logo">
+					<img src="images/new_susDKUlogo.png">
+				</a>
+				
+				<input type="checkbox" id="menu">
+				<label for="menu"><i class="fas fa-bars"></i></label>
+				<ul class="menuList">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="news.html">News</a></li>
+					<li><a href="guides.html">Guides</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="#" onclick="switch_lng()">Action Log</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+    <!--Banner-->
+    <div class="container-banner" id="container-banner">
+        <div class="caption" id="slider-caption">
+            <div class="caption-heading">
+                <h1>DKU's First Sustainability Report</h1>
+            </div>
+            <div class="caption-subhead">
+                <span>Created by Sustainable DKU Club</span>
+            </div>
+            <a href="#" class="btn">Read More</a>
+        </div>
+        <div class="left-col" id="left-col">
+            <div id="left-slider"></div>
+            <ul class="nav">
+                <li class="slide-up">
+                    <a href="#">&lt;</a>
+                </li>
+                <li class="slide-down">
+                    <a href="#" id="down_button">&gt;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN Content -->
+    <main>
+		<section>
+			<div class="column5">
+				<h2>Explore Eco-Friendly Intiatives</h2>
+				<p>promote sustainable living practices, and collaborate on projects that 
+					contribute to a greener future and a meaningful future on DKU and the world. Our
+                    club is focusing not just making campus more green, but also promoting sustainable
+                    progress within the local Shanghai-Kunshan-Suzhou area and the various international
+                communities DKU students are a part of.</p>
+                <br>
+				<button>read more</button>
+                <br>
+                <br>
+                <h2>Search Easily for Eco Opportunities</h2>
+				<p>The Sustainable DKU website hosts a range lists of opportunities to get
+                    involved in sustainable related opportunities. Whether on campus through a 
+                    research project, local vegetarian convention, or an international grant, you
+                    can easily search through our website and find the one that best ineterst you!
+                </p>
+                <br>
+                <button>Start exploring!</button>
+                <br>
+				</div>
+			<div class="column5">
+				<h2>
+				Highlight of the Month
+				</h2>
+				<div>
+					<div class="column5">
+						<img src="images/volunteer-6772196_1280.jpg" alt="DKU">
+					</div>
+					<div class="column5">
+						<p>
+						Our member, blank, who joined us since freshman year,
+                        recently started a club project to blank blank! As a 
+                        passionate and driven student of our club, we'd like to recognize 
+                        her! Congrats!
+                        <br>
+						<button>more projects</button>
+						</p>
+                        <br>
+                        <br>
+                        
+					</div>
+				</div>
+			</div>
+		</section>
+        <br>
+	</main>
+
+    <!--Footer-->
+	<footer class="footer">
+		<div class="footer-left col-md-4 col-sm-6">
+		  <p class="about">
+			<span>Sustainable DKU Club Website</span>Sustainable DKU is a official school club at Duke Kunshan University. Views posted on the website and of the club members do not necessarily reflect the club or the university as a whole.</p>
+		</div>
+		<div class="footer-center col-md-4 col-sm-6">
+		  <div>
+			<a href="https://www.instagram.com/sustainabledku/" target="_blank"><img src="images/icons/instagram.png" height="20px"></a>
+			<p><span>@sustainabledku</p>
+		  </div>
+		  <br>
+		  <div>
+			<a href="https://www.instagram.com/sustainabledku/" target="_blank"><img src="images/icons/qr-code.png" height="20px"></a>
+			<p>WeChat Group</p>
+		  </div>
+		  <br>
+		  <div>
+			<a href="https://www.instagram.com/sustainabledku/" target="_blank"><img src="images/icons/wechat2.png" height="20px"></a>
+			<p><a href="#">WeChat Service Account</a></p>
+		  </div>
+		</div>
+		<div class="footer-right col-md-4 col-sm-6">
+		  <img src="images/dku_logo_whitevers.png" height="70px">
+		  <p class="menu">
+			<a href="https://dukekunshan.edu.cn/" target="_blank">DUKE KUNSHAN WEBSITE</a> 
+		  </p>
+		</div>
+	  </footer>
+
+    <!-- JS script for Banner-->
+    <script>
+        let slide_data = [
+            {
+            'src':'images/dku_report.jpg',
+            'title':"The First Report",
+            'copy':'Presented by Sustainable DKU'
+            },
+            {
+            'src':'images/pavilionwide.jpg', 
+            'title':'Donation Boxes Open!',
+            'copy':'Come donate your gently used items.'
+            },
+            {
+            'src':'images/pavilionwide.jpg', 
+            'title':'Dive into our Projects',
+            'copy':'Get involved in our projects and sustainability.'
+            },
+            {
+            'src':'images/pavilionwide.jpg', 
+            'title':'Campus Opportunities',
+            'copy':'Come learn about opportunities to get involved in research, fellowships, and more.'
+            },
+            
+            ];
+            let slides = [],
+                captions = [];
+            
+            let autoplay = setInterval(function(){
+                nextSlide();
+            },5000);
+            let container = document.getElementById('container-banner');
+            let leftSlider = document.getElementById('left-col');
+            // console.log(leftSlider);
+            let down_button = document.getElementById('down_button');
+            // let caption = document.getElementById('slider-caption');
+            // let caption_heading = caption.querySelector('caption-heading');
+            
+            down_button.addEventListener('click', function(e){
+                e.preventDefault();
+                clearInterval(autoplay); // Stopping the autoplay
+                nextSlide();
+                autoplay = setInterval(nextSlide, 5000); // Restarting the autoplay with a 5-second interval
+            });
+            
+            
+            for (let i = 0; i< slide_data.length; i++){
+                let slide = document.createElement('div'),
+                    caption = document.createElement('div'),
+                    slide_title = document.createElement('div');
+                
+                slide.classList.add('slide');
+                slide.setAttribute('style','background:url('+slide_data[i].src+')');
+                caption.classList.add('caption');
+                slide_title.classList.add('caption-heading');
+                slide_title.innerHTML = '<h1>'+slide_data[i].title+'</h1>';
+                
+                switch(i){
+                case 0:
+                    slide.classList.add('current');
+                    caption.classList.add('current-caption');
+                    break;
+                case 1:
+                    slide.classList.add('next');
+                    caption.classList.add('next-caption');
+                    break;
+                case slide_data.length -1:
+                    slide.classList.add('previous');
+                    caption.classList.add('previous-caption');
+                    break;
+                default:
+                    break;       
+                }
+                caption.appendChild(slide_title);
+                
+                slides.push(slide);
+                captions.push(caption);
+                leftSlider.appendChild(slide);
+                container.appendChild(caption);
+            }
+            // console.log(slides);
+            
+            function nextSlide(){
+                // caption.classList.add('offscreen');
+                
+                slides[0].classList.remove('current');
+                slides[0].classList.add('previous','change');
+                slides[1].classList.remove('next');
+                slides[1].classList.add('current');
+                slides[2].classList.add('next');
+                let last = slides.length -1;
+                slides[last].classList.remove('previous');
+                
+                captions[0].classList.remove('current-caption');
+                captions[0].classList.add('previous-caption','change');
+                captions[1].classList.remove('next-caption');
+                captions[1].classList.add('current-caption');
+                captions[2].classList.add('next-caption');
+                let last_caption = captions.length -1;
+                
+                // console.log(last);
+                captions[last].classList.remove('previous-caption');
+                
+                let placeholder = slides.shift();
+                let captions_placeholder = captions.shift();
+                slides.push(placeholder); 
+                captions.push(captions_placeholder);
+            }
+            
+            let heading = document.querySelector('.caption-heading');
+            
+            
+            // https://jonsuh.com/blog/detect-the-end-of-css-animations-and-transitions-with-javascript/
+            function whichTransitionEvent(){
+                var t,
+                    el = document.createElement("fakeelement");
+            
+                var transitions = {
+                "transition"      : "transitionend",
+                "OTransition"     : "oTransitionEnd",
+                "MozTransition"   : "transitionend",
+                "WebkitTransition": "webkitTransitionEnd"
+                }
+            
+                for (t in transitions){
+                if (el.style[t] !== undefined){
+                    return transitions[t];
+                }
+                }
+            }
+            
+            var transitionEvent = whichTransitionEvent()
+            caption.addEventListener(transitionEvent, customFunction);
+            
+            function customFunction(event) {
+                caption.removeEventListener(transitionEvent, customFunction);
+                console.log('animation ended');
+            
+                // Do something when the transition ends
+
+            
+            }
+    </script>
+</body>
+</html>
